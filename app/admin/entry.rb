@@ -1,4 +1,5 @@
 ActiveAdmin.register Entry do
+  permit_params :status, :unique_id, :duration, :score, :thumbnail
 
   
   # See permitted parameters documentation:
