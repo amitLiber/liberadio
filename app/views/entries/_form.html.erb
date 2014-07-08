@@ -1,0 +1,16 @@
+<%= simple_form_for(@entry) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :status %>
+    <%= f.input :unique_id %>
+    <%= f.input :duration %>
+    <%= f.input :score %>
+    <%= f.input :thumbnail %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

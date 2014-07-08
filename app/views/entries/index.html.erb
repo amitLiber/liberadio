@@ -1,0 +1,35 @@
+<h1>Listing entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Status</th>
+      <th>Unique</th>
+      <th>Duration</th>
+      <th>Score</th>
+      <th>Thumbnail</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.user %></td>
+        <td><%= entry.status %></td>
+        <td><%= entry.unique_id %></td>
+        <td><%= entry.duration %></td>
+        <td><%= entry.score %></td>
+        <td><%= entry.thumbnail %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_entry_path %>
